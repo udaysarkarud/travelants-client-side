@@ -10,6 +10,9 @@ import AddPackage from './components/AddPackage/AddPackage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import BookingPanel from './components/BookingPanel/BookingPanel';
+import AddBlog from './components/Blogs/AddBlog/AddBlog';
+import SingelBlogDetails from './components/Blogs/SingelBlogDetails/SingelBlogDetails';
+import Blogs from './components/Blogs/Blogs';
 function App() {
   return (
     <div className="App">
@@ -28,6 +31,21 @@ function App() {
 
             <Route path='/booking/:pkg'>
               <BookingPanel />
+            </Route>
+
+
+            <Route path='/addblog'>
+              <AddBlog />
+            </Route>
+
+
+
+            <Route path='/blogs'>
+              <Blogs />
+            </Route>
+
+            <Route path='/blogdetails/:bgi'>
+              <SingelBlogDetails />
             </Route>
 
 

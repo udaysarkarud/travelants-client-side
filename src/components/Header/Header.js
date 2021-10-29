@@ -20,7 +20,7 @@ const Header = () => {
                                 <HashLink to="/home#ServiceSection" className="nav-link">Services</HashLink>
                             </li>
                             <li className="nav-item">
-                                <HashLink to="/home#BlogSection" className="nav-link">Blogs</HashLink>
+                                <HashLink to="/blogs" className="nav-link">Blogs</HashLink>
                             </li>
                         </ul>
                         <div className="dropdown">
@@ -39,6 +39,10 @@ const Header = () => {
                                 </li>
                                 <li>
                                     <NavLink to='/addpackage' className="dropdown-item">Add New Package</NavLink>
+                                </li>
+                                <li><hr className="dropdown-divider" /></li>
+                                <li>
+                                    <NavLink to='/addblog' className="dropdown-item">Add New Blog</NavLink>
                                 </li>
                                 <li><hr className="dropdown-divider" /></li>
                                 <li>
