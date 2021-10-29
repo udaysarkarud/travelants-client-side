@@ -9,6 +9,7 @@ import ManageOrders from './components/ManageOrders/ManageOrders'
 import AddPackage from './components/AddPackage/AddPackage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
+import BookingPanel from './components/BookingPanel/BookingPanel';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,10 @@ function App() {
 
             <Route path='/home'>
               <Home />
+            </Route>
+
+            <Route path='/booking/:pkg'>
+              <BookingPanel />
             </Route>
 
 

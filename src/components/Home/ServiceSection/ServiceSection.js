@@ -1,64 +1,24 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import SingelPackage from '../../SingelPackage/SingelPackage';
 
 const ServiceSection = () => {
+
+    const [tourPackage, setTourPackage] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/showpackages')
+            .then(res => setTourPackage(res.data))
+    }, [])
+
     return (
         <section className="container" id="ServiceSection">
-            <h2>Service Section</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a short card.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
+            <div className="row row-cols-1 row-cols-md-3 g-4">
+
+                {
+                    tourPackage?.map(tour => <SingelPackage key={tour._id} packdetails={tour} />)
+                }
+
             </div>
         </section>
     );
