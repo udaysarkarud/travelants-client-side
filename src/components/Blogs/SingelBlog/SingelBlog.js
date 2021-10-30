@@ -4,17 +4,19 @@ import { NavLink } from 'react-router-dom';
 const SingelBlog = (props) => {
     const { _id, title, author, description, img, publishddate } = props.blogdetails
     return (
-        <div className="col">
-            <div className="card h-100">
-                <img src={img} className="card-img-top" alt="..." />
-                <div className="d-flex justify-content-between">
-                    <p className="fw-bold fs-6 text-right"><i className="bi bi-person-lines-fill"></i> {author}</p>
-                    <p className="fw-bold fs-6"><i className="bi bi-alarm"></i> {publishddate}</p>
+        <div className="col-xl-6 col-lg-6 col-12">
+            <div className="single-blog fix mb-30 w-img">
+                <div className="blog-thumb">
+                    <img src={img} alt="blog-sm" />
                 </div>
-                <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description.slice(0, 150)} <NavLink to={`/blogdetails/${_id}`} className="link-secondary text-decoration-none">Read More...</NavLink></p>
-
+                <div className="blog-content">
+                    <h1><NavLink to={`/blogdetails/${_id}`}>{title}</NavLink></h1>
+                    <p>{description.slice(0, 150)}</p>
+                    <div className="d-flex">
+                        <p>Author: {author}</p>
+                        <p className="me-2 ms-2"> / </p>
+                        <p>Published: {publishddate}</p>
+                    </div>
                 </div>
             </div>
         </div>

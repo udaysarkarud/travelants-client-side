@@ -15,27 +15,53 @@ const AddBlog = () => {
 
     };
     return (
-        <section className="container">
-            <h2>Add Blog</h2>
+        <section className="container section-gap">
             <div className="row">
-                <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-                    <input {...register("title", { required: true })} placeholder="Blog Title" />
-                    {errors.title && <span>This field is required</span>}
-                    <br /><br />
+                <div className="col-xl-8 offset-xl-2">
+                    <div className="sec-title text-center mb-50">
+                        <h1>The Best Value Under the Sun</h1>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua Ut enim ad minim </p>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-xl-6 col-lg-6 col-md-12">
+                    <img className="img-fluid" src="https://www.kindpng.com/picc/m/363-3636981_actor-clipart-chair-script-writer-icon-png-transparent.png" alt="" />
+                </div>
 
-                    <input {...register("author", { required: true })} placeholder="Author Name" />
-                    {errors.author && <span>This field is required</span>}
-                    <br /><br />
+                <div className="col-xl-6 col-lg-6 col-md-12">
 
-                    <textarea {...register("description", { required: true })} placeholder="Description" />
-                    {errors.description && <span>This field is required</span>}
-                    <br /><br />
 
-                    <input {...register("img", { required: true })} placeholder="Image url" />
-                    {errors.img && <span>This field is required</span>}
-                    <br /><br />
-                    <input type="submit" />
-                </form>
+                    <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
+                        <div className="form-outline mb-4">
+                            <input {...register("title", { required: true })} className="form-control form-control-lg" placeholder="Blog Title" />
+                            {errors.title && <span>This field is required</span>}
+                        </div>
+
+                        <div className="form-outline mb-4">
+                            <input {...register("author", { required: true })} className="form-control form-control-lg" placeholder="Author Name" />
+                            {errors.author && <span>This field is required</span>}
+                        </div>
+
+                        <div className="form-outline mb-4">
+                            <textarea {...register("description", { required: true })} className="form-control form-control-lg" placeholder="Description" rows="8" />
+                            {errors.description && <span>This field is required</span>}
+                        </div>
+                        <div className="form-outline mb-4">
+                            <input {...register("img", { required: true })} className="form-control form-control-lg" placeholder="Image url" />
+                            {errors.img && <span>This field is required</span>}
+                        </div>
+
+                        <div className="pt-1 mb-4">
+                            <button className="btn btn-dark btn-lg btn-block"
+                                type="submit">Add New Blog Post</button>
+
+                            <button className="btn btn-dark btn-lg btn-block ms-2" type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </section>
     );
