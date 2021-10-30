@@ -1,9 +1,29 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
+import useAuth from '../../Hook/useAuth';
 
 const Login = () => {
+    const { handelGoogleLogin, setIsLoading, allError, setAllError } = useAuth();
+
+    const location = useLocation()
+    const history = useHistory()
+    const redirect_url = location.state?.from || '/home'
+
+    const GoogleLogin = () => {
+        handelGoogleLogin()
+            .then(result => {
+                setAllError('')
+                history.push(redirect_url)
+            }).catch((error) => {
+                setAllError(error.code)
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }
     return (
         <section className="container section-gap">
-            <section className="vh-100">
+            <section className="">
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col col-xl-10">
@@ -19,7 +39,7 @@ const Login = () => {
                                             <form>
 
                                                 <div className="d-flex align-items-center mb-3 pb-1">
-                                                    <span className="h1 fw-bold mb-0">Logo</span>
+                                                    <span className="h1 fw-bold mb-0"><i className="bi bi-flower2"></i> TravelAnts</span>
                                                 </div>
 
                                                 <h5 className="fw-normal mb-3 pb-3">Sign into
@@ -39,7 +59,7 @@ const Login = () => {
 
                                                 <div className="pt-1 mb-4">
                                                     <button className="btn btn-dark btn-lg btn-block"
-                                                        type="button">Login</button> <button
+                                                        type="button">Login</button> <button onClick={GoogleLogin}
                                                             className="btn btn-dark btn-lg btn-block" type="button">Google Login
                                                         / Singup</button>
                                                 </div>

@@ -14,6 +14,7 @@ import AddBlog from './components/Blogs/AddBlog/AddBlog';
 import SingelBlogDetails from './components/Blogs/SingelBlogDetails/SingelBlogDetails';
 import Blogs from './components/Blogs/Blogs';
 import Services from './components/Services/Services';
+import SecureRoute from './components/SecureRoute/SecureRoute';
 function App() {
   return (
     <div className="App">
@@ -34,23 +35,23 @@ function App() {
               <Services />
             </Route>
 
-            <Route path='/blogs'>
+            <SecureRoute path='/blogs'>
               <Blogs />
-            </Route>
+            </SecureRoute>
 
 
             <Route path='/login'>
               <Login />
             </Route>
 
-            <Route path='/myorders'>
+            <SecureRoute path='/myorders'>
               <MyOrders />
-            </Route>
+            </SecureRoute>
 
 
-            <Route path='/manageorders'>
+            <SecureRoute path='/manageorders'>
               <ManageOrders />
-            </Route>
+            </SecureRoute>
 
             <Route path='/booking/:pkg'>
               <BookingPanel />
@@ -60,13 +61,13 @@ function App() {
               <SingelBlogDetails />
             </Route>
 
-            <Route path='/addpackage'>
+            <SecureRoute path='/addpackage'>
               <AddPackage />
-            </Route>
+            </SecureRoute>
 
-            <Route path='/addblog'>
+            <SecureRoute path='/addblog'>
               <AddBlog />
-            </Route>
+            </SecureRoute>
 
           </Switch>
           <Footer />

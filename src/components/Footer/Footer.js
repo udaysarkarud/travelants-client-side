@@ -11,11 +11,11 @@ const Footer = () => {
                                 <h3>Get in Touch</h3>
                             </div>
 
-                            <div>
+                            <div className="quick-contacts">
                                 <p>Lorem ipsum dolor sit am co adipisicing elit, sed do eiusmod tempor</p>
                             </div>
-                            <ul>
-                                <li>
+                            <ul className="quick-contact-details">
+                                <li className="nav-link text-black">
                                     <div className="footer-contact-inner d-flex align-items-center">
                                         <div className="icon mr-20">
                                             <span><i className="bi bi-geo-alt-fill"></i></span>
@@ -25,7 +25,7 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li className="nav-link text-black">
                                     <div className="footer-contact-inner d-flex align-items-center">
                                         <div className="icon mr-20">
                                             <span><i className="bi bi-telephone-forward-fill"></i></span>
@@ -35,7 +35,7 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li className="nav-link text-black">
                                     <div className="footer-contact-inner d-flex align-items-center">
                                         <div className="icon mr-20">
                                             <span><i className="bi bi-envelope-fill"></i></span>

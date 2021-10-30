@@ -1,15 +1,20 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useEffect } from 'react/cjs/react.development';
+import useAuth from '../../Hook/useAuth';
 
 const MyOrders = () => {
     const [myBookings, setMyBookings] = useState([])
-    const usere = 'asdasdarud@gmail.com'
+    const [dbLoad, setDbload] = useState(0)
+    const { userProfile } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/mybookings?search=${usere}`)
-            .then(res => setMyBookings(res.data))
-    })
+        axios.get(`http://localhost:5000/mybookings?search=${userProfile.email}`)
+            .then(res => {
+                setMyBookings(res.data)
+                setDbload(dbLoad + 1)
+            })
+    }, [dbLoad])
     const handelDecline = (id) => {
         axios.delete(`http://localhost:5000/deletebooking/${id}`)
             .then(res => console.log(res))

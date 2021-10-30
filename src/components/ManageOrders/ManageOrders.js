@@ -1,22 +1,47 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 
 const ManageOrders = () => {
     const [allBookings, setAllBookings] = useState([])
+    const [dbLoad, setDbload] = useState(0)
 
     useEffect(() => {
         axios.get(`http://localhost:5000/mybookings`)
-            .then(res => setAllBookings(res.data))
-    })
+            .then(res => {
+                setAllBookings(res.data)
+            })
+    }, [dbLoad])
 
     const handelStatus = (id) => {
         console.log(id)
         axios.put(`http://localhost:5000/changestatus/${id}`)
-            .then(res => console.log(res))
+            .then(res => {
+                setDbload(dbLoad + 1)
+            })
     }
+
     const handelDecline = (id) => {
-        axios.delete(`http://localhost:5000/deletebooking/${id}`)
-            .then(res => console.log(res))
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able track this booking",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axios.delete(`http://localhost:5000/deletebooking/${id}`)
+                        .then(res => {
+                            setDbload(dbLoad + 1)
+                        })
+                    swal("Deleted booking successfully", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("You can still tack this booking");
+                }
+            });
     }
     return (
         <section className="container section-gap">

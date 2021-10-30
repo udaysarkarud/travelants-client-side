@@ -237,6 +237,10 @@ h1,h3 {
 .quick-contacts ul{
     list-style-type:none;
   }
+.quick-contact-details{
+    padding: 0px !important;
+    margin: 0px !important;
+}
 .quick-links ul{
       list-style-type:none;
       padding-left: 1rem;

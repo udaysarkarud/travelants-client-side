@@ -1,8 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../Hook/useAuth';
 
 const Header = () => {
+    const { userProfile, handelSignOut } = useAuth();
+    console.log(userProfile)
     return (
         <header className="header-area header-transparent">
             <div className="container my-2 fs-6">
@@ -29,34 +32,44 @@ const Header = () => {
                                     <HashLink to="/blogs" className="nav-link">Blogs</HashLink>
                                 </li>
                             </ul>
+                            {
+                                userProfile.email ?
+                                    <>
+                                        <img src={userProfile?.photoURL} alt="" style={{ width: "4%" }} className="mx-2 rounded-circle" />
 
-                            <div className="dropdown">
-                                <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i className="bi bi-person-circle"></i> User Name
-                                </button>
-                                <ul className="dropdown-menu">
-                                    <li>
-                                        <NavLink to='/login' className="dropdown-item">Login / SingUp</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/myorders' className="dropdown-item">My Orders</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/manageorders' className="dropdown-item">Manage All Orders</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/addpackage' className="dropdown-item">Add New Package</NavLink>
-                                    </li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li>
-                                        <NavLink to='/addblog' className="dropdown-item">Add New Blog</NavLink>
-                                    </li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <div className="dropdown">
+                                            <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {userProfile?.displayName}
+                                            </button>
+                                            <ul className="dropdown-menu">
+                                                <li>
+                                                    <NavLink to='/myorders' className="dropdown-item">
+                                                        <i className="bi bi-person-circle"></i> User Dash</NavLink>
+                                                </li>
+                                                <li><hr className="dropdown-divider" /></li>
+                                                <li>
+                                                    <NavLink to='/manageorders' className="dropdown-item">Manage All Orders</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to='/addpackage' className="dropdown-item">Add New Package</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to='/addblog' className="dropdown-item">Add New Blog</NavLink>
+                                                </li>
+                                                <li><hr className="dropdown-divider" /></li>
+                                                <li>
+                                                    <button className="dropdown-item" onClick={handelSignOut}>Logout</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </>
+                                    :
+                                    <Link to="/login">
+                                        <button className="btn">
+                                            <i className="bi bi-person-circle"></i> Login /Singup
+                                        </button>
+                                    </Link>
+                            }
                         </div>
                     </div>
                 </nav>
