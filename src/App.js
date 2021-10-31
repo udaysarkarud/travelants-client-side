@@ -16,6 +16,7 @@ import Blogs from './components/Blogs/Blogs';
 import Services from './components/Services/Services';
 import SecureRoute from './components/SecureRoute/SecureRoute';
 import AboutPage from './components/AboutPage/AboutPage';
+import NotFound from './components/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
@@ -73,6 +74,10 @@ function App() {
             <SecureRoute path='/addblog'>
               <AddBlog />
             </SecureRoute>
+
+            <Route path='*'>
+              <NotFound />
+            </Route>
 
           </Switch>
           <Footer />
