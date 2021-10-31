@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useEffect } from 'react/cjs/react.development';
 import useAuth from '../../Hook/useAuth';
+import swal from 'sweetalert';
 
 const MyOrders = () => {
     const [myBookings, setMyBookings] = useState([])
@@ -9,15 +10,34 @@ const MyOrders = () => {
     const { userProfile } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/mybookings?search=${userProfile.email}`)
+        axios.get(`https://limitless-lake-67234.herokuapp.com/mybookings?search=${userProfile.email}`)
             .then(res => {
                 setMyBookings(res.data)
                 setDbload(dbLoad + 1)
             })
     }, [dbLoad])
+
     const handelDecline = (id) => {
-        axios.delete(`http://localhost:5000/deletebooking/${id}`)
-            .then(res => console.log(res))
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able track this booking",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axios.delete(`https://limitless-lake-67234.herokuapp.com/deletebooking/${id}`)
+                        .then(res => {
+                            setDbload(dbLoad + 1)
+                        })
+                    swal("Deleted booking successfully", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("You can still tack this booking");
+                }
+            });
     }
     return (
         <section className="container section-gap">
@@ -39,6 +59,7 @@ const MyOrders = () => {
                             <th scope="col">Package Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Duration</th>
+                            <th scope="col">Booking Date</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -51,6 +72,7 @@ const MyOrders = () => {
                                     <td>{details?.packagename}</td>
                                     <td>{details?.price}</td>
                                     <td>{details?.duration}</td>
+                                    <td>{details?.bookeddate}</td>
                                     <td>{details?.status}</td>
                                     <td>
                                         <button onClick={() => handelDecline(details._id)} className="btn btn-warning">decline</button>

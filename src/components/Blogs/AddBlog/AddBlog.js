@@ -1,7 +1,7 @@
-
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 
 const AddBlog = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
@@ -9,8 +9,11 @@ const AddBlog = () => {
     const onSubmit = data => {
         const publishddate = new Date().toLocaleDateString()
         const content = { ...data, publishddate }
-        axios.post('http://localhost:5000/addblog', content)
-            .then(res => console.log(res))
+        axios.post('https://limitless-lake-67234.herokuapp.com/addblog', content)
+            .then(res => {
+                swal("Great!", "Your Blog Post Added", "successfully");
+                reset()
+            })
         reset()
 
     };

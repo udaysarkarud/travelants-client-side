@@ -7,7 +7,7 @@ const SingelBlog = (props) => {
         <div className="col-xl-6 col-lg-6 col-12">
             <div className="single-blog fix mb-30 w-img">
                 <div className="blog-thumb">
-                    <img src={img} alt="blog-sm" />
+                    <img src={img} alt="blog-sm" className="img-fluid card-img-top" />
                 </div>
                 <div className="blog-content">
                     <h1><NavLink to={`/blogdetails/${_id}`}>{title}</NavLink></h1>

@@ -7,7 +7,7 @@ const ServiceSection = () => {
     const [tourPackage, setTourPackage] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/showpackages')
+        axios.get('https://limitless-lake-67234.herokuapp.com/showpackages?type=home')
             .then(res => setTourPackage(res.data))
     }, [])
 

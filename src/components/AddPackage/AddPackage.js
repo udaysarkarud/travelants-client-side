@@ -1,15 +1,17 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 
 const AddPackage = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
-        axios.post('http://localhost:5000/addtourpackage', data)
-            .then(res => console.log(res))
-        console.log(data)
-        reset()
+        axios.post('http://host:5000/addtourpackage', data)
+            .then(res => {
+                swal("Great!", "New Tour Package Added", "success");
+                reset()
+            })
     };
 
     return (
@@ -35,8 +37,8 @@ const AddPackage = () => {
                         <div className="form-outline mb-4">
                             <select {...register("type")} className="form-control form-control-lg">
                                 <option value="Regular">Regular</option>
+                                <option value="Special">Premium</option>
                                 <option value="Special">Special</option>
-                                <option value="Notun Biya Boise">Notun Biya Boise</option>
                             </select>
                             {errors.type && <span>This field is required</span>}
                         </div>

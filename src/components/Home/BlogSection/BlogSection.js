@@ -6,7 +6,7 @@ const BlogSection = () => {
     const [showBlogs, setShowBlogs] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/showblogs?type=home')
+        axios.get('https://limitless-lake-67234.herokuapp.com/showblogs?type=home')
             .then(res => setShowBlogs(res.data))
     }, [])
 

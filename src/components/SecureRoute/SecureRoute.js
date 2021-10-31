@@ -5,10 +5,10 @@ import useAuth from '../../Hook/useAuth';
 const SecureRoute = ({ children, ...rest }) => {
     const { userProfile, isLoading } = useAuth()
     if (isLoading) {
-        return <section className="hero-banner" id="home-section">
+        return <section className="container section-gap">
             <div className="container">
                 <div className="row">
-                    <img style={{ width: "300px" }} src="https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif" className="rounded mx-auto d-block" alt="..." />
+                    <img style={{ width: "300px" }} src="https://cdn.lowgif.com/full/31baf3ba3f2592ab-animated-gif-transparent-background-14-gif-images-download.gif" className="rounded mx-auto d-block" alt="..." />
                 </div>
             </div>
         </section>

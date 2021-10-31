@@ -5,7 +5,6 @@ import useAuth from '../../Hook/useAuth';
 
 const Header = () => {
     const { userProfile, handelSignOut } = useAuth();
-    console.log(userProfile)
     return (
         <header className="header-area header-transparent">
             <div className="container my-2 fs-6">

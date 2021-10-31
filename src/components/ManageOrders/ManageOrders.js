@@ -7,7 +7,7 @@ const ManageOrders = () => {
     const [dbLoad, setDbload] = useState(0)
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/mybookings`)
+        axios.get(`https://limitless-lake-67234.herokuapp.com/mybookings`)
             .then(res => {
                 setAllBookings(res.data)
             })
@@ -15,7 +15,7 @@ const ManageOrders = () => {
 
     const handelStatus = (id) => {
         console.log(id)
-        axios.put(`http://localhost:5000/changestatus/${id}`)
+        axios.put(`https://limitless-lake-67234.herokuapp.com/changestatus/${id}`)
             .then(res => {
                 setDbload(dbLoad + 1)
             })
@@ -31,7 +31,7 @@ const ManageOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:5000/deletebooking/${id}`)
+                    axios.delete(`https://limitless-lake-67234.herokuapp.com/deletebooking/${id}`)
                         .then(res => {
                             setDbload(dbLoad + 1)
                         })
@@ -60,9 +60,11 @@ const ManageOrders = () => {
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">User</th>
                             <th scope="col">Package Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Duration</th>
+                            <th scope="col">Booking Date</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -72,13 +74,18 @@ const ManageOrders = () => {
                             allBookings.map((details, index) =>
                                 <tr key={details._id}>
                                     <th scope="row">{index + 1}</th>
+                                    <td><img src={details?.userPhoto} alt="" style={{ width: "10%" }} className="mx-2 rounded-circle" /> {details?.username}</td>
                                     <td>{details?.packagename}</td>
                                     <td>{details?.price}</td>
                                     <td>{details?.duration}</td>
+                                    <td>{details?.bookeddate}</td>
                                     <td>{details?.status}</td>
                                     <td>
-                                        <button onClick={() => handelStatus(details._id)} className="btn btn-success">Accept</button>
-                                        <button onClick={() => handelDecline(details._id)} className="btn btn-warning">decline</button>
+                                        {
+                                            details?.status === 'pending' && <button onClick={() => handelStatus(details._id)} className="btn btn-success me-2">Approve</button>
+                                        }
+
+                                        <button onClick={() => handelDecline(details._id)} className="btn btn-warning">Delete</button>
                                     </td>
                                 </tr>
                             )
