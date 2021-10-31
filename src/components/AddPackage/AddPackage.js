@@ -19,9 +19,8 @@ const AddPackage = () => {
             <div className="row">
                 <div className="col-xl-8 offset-xl-2">
                     <div className="sec-title text-center mb-50">
-                        <h1>The Best Value Under the Sun</h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua Ut enim ad minim </p>
+                        <h1>Add packages for users</h1>
+                        <p> Provide all correct informations so that user can select the right package for themselfs. provide package name, duration and image </p>
                     </div>
                 </div>
             </div>
@@ -63,7 +62,7 @@ const AddPackage = () => {
                         </div>
 
                         <div className="form-outline mb-4">
-                            <textarea {...register("description", { required: true })} placeholder="Description" className="form-control form-control-lg" />
+                            <textarea {...register("description", { required: true })} placeholder="Description" className="form-control form-control-lg" rows="6" />
                             {errors.description && <span>This field is required</span>}
 
                         </div>

@@ -9,7 +9,7 @@ const SingelBlogDetails = () => {
     const { bgi } = useParams();
     const [blogDetails, setBlogDetails] = useState({})
     useEffect(() => {
-        axios.get(`https://limitless-lake-67234.herokuapp.com/showblogs?find=${bgi}`)
+        axios.get(`http://localhost:5000/showblogs?find=${bgi}`)
             .then(res => setBlogDetails(res.data))
     }, [])
 

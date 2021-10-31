@@ -7,8 +7,7 @@ const TopPackages = () => {
                 <div className="col-xl-8 offset-xl-2">
                     <div className="sec-title text-center mb-50">
                         <h1>Enjoy with your special one</h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua Ut enim ad minim </p>
+                        <p> Need some inspiration for you and your special one's next getaway? Find the perfect oceanfront condo, cozy cabin, or luxurious villa in one of these top destinations.</p>
                     </div>
                 </div>
             </div>

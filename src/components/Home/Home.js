@@ -5,6 +5,7 @@ import BlogSection from './BlogSection/BlogSection'
 import TestimonialSection from './TestimonialSection/TestimonialSection'
 import AboutSection from './AboutSection/AboutSection';
 import TopPackages from './TopPackages/TopPackages';
+import Contact from './Contact/Contact';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <ServiceSection />
             <AboutSection />
             <TopPackages />
+            <Contact />
             <BlogSection />
         </main>
     );

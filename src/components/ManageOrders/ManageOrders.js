@@ -7,7 +7,7 @@ const ManageOrders = () => {
     const [dbLoad, setDbload] = useState(0)
 
     useEffect(() => {
-        axios.get(`https://limitless-lake-67234.herokuapp.com/mybookings`)
+        axios.get(`http://localhost:5000/mybookings`)
             .then(res => {
                 setAllBookings(res.data)
             })
@@ -15,7 +15,7 @@ const ManageOrders = () => {
 
     const handelStatus = (id) => {
         console.log(id)
-        axios.put(`https://limitless-lake-67234.herokuapp.com/changestatus/${id}`)
+        axios.put(`http://localhost:5000/changestatus/${id}`)
             .then(res => {
                 setDbload(dbLoad + 1)
             })
@@ -31,7 +31,7 @@ const ManageOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`https://limitless-lake-67234.herokuapp.com/deletebooking/${id}`)
+                    axios.delete(`http://localhost:5000/deletebooking/${id}`)
                         .then(res => {
                             setDbload(dbLoad + 1)
                         })
@@ -48,9 +48,8 @@ const ManageOrders = () => {
             <div className="row">
                 <div className="col-xl-8 offset-xl-2">
                     <div className="sec-title text-center mb-50">
-                        <h1>The Best Value Under the Sun</h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua Ut enim ad minim </p>
+                        <h1>hello! Admin, find all bookings</h1>
+                        <p> Find all booking information of all users. you can approve or delete any booking by this way you can easy control your customer all bookings </p>
                     </div>
                 </div>
             </div>

@@ -363,3 +363,11 @@ h1,h3 {
     height: 15vw;
     object-fit: cover;
 }
+.contact-section{
+
+    background:url("https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,h_600,q_auto,w_auto/v1/filestore/btdocigle4thx3iq0eg6uf99mqul_shutterstock_1176563608.jpg") rgba(0, 0, 0, 0.527);
+    background-blend-mode: overlay;
+	background-size: cover;
+    background-repeat: no-repeat;
+	padding: 100px 0px;
+}

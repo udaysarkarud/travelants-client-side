@@ -12,7 +12,7 @@ const BookingPanel = () => {
     const history = useHistory()
 
     useEffect(() => {
-        axios.get(`https://limitless-lake-67234.herokuapp.com/showpackages?find=${pkg}`)
+        axios.get(`http://localhost:5000/showpackages?find=${pkg}`)
             .then(res => setSingelPkg(res.data))
     }, [])
 
@@ -26,7 +26,7 @@ const BookingPanel = () => {
         const bookingData = { packageId: singelPkg._id, ...data, status: 'pending', userPhoto: userProfile.photoURL }
         console.log(bookingData)
 
-        axios.post('https://limitless-lake-67234.herokuapp.com/newbooking', bookingData)
+        axios.post('http://localhost:5000/newbooking', bookingData)
             .then(res => {
                 swal("Good job!", "You have booked your tour", "successfully")
                     .then((value) => {

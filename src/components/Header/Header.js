@@ -10,7 +10,7 @@ const Header = () => {
             <div className="container my-2 fs-6">
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     <div className="container-fluid">
-                        <a className="navbar-brand fw-bolder" href="#"><i className="bi bi-flower2"></i> TravelAnts</a>
+                        <a className="navbar-brand fw-bolder" href="/"><i className="bi bi-flower2"></i> TravelAnts</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -22,13 +22,13 @@ const Header = () => {
                                     <NavLink to='/home' className="nav-link">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">About Us</a>
+                                    <NavLink to="/aboutus" className="nav-link">About Us</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to="/services" className="nav-link">Services</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <HashLink to="/blogs" className="nav-link">Blogs</HashLink>
+                                    <NavLink to="/blogs" className="nav-link">Blogs</NavLink>
                                 </li>
                             </ul>
                             {

@@ -10,7 +10,7 @@ const MyOrders = () => {
     const { userProfile } = useAuth();
 
     useEffect(() => {
-        axios.get(`https://limitless-lake-67234.herokuapp.com/mybookings?search=${userProfile.email}`)
+        axios.get(`http://localhost:5000/mybookings?search=${userProfile.email}`)
             .then(res => {
                 setMyBookings(res.data)
                 setDbload(dbLoad + 1)
@@ -27,7 +27,7 @@ const MyOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`https://limitless-lake-67234.herokuapp.com/deletebooking/${id}`)
+                    axios.delete(`http://localhost:5000/deletebooking/${id}`)
                         .then(res => {
                             setDbload(dbLoad + 1)
                         })
@@ -44,9 +44,8 @@ const MyOrders = () => {
             <div className="row">
                 <div className="col-xl-8 offset-xl-2">
                     <div className="sec-title text-center mb-50">
-                        <h1>The Best Value Under the Sun</h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua Ut enim ad minim </p>
+                        <h1>Find your all boonking</h1>
+                        <p> Find out your all bookings so that you can easily control everything. you also can delete your booking if you like to do.</p>
                     </div>
                 </div>
             </div>
@@ -75,7 +74,7 @@ const MyOrders = () => {
                                     <td>{details?.bookeddate}</td>
                                     <td>{details?.status}</td>
                                     <td>
-                                        <button onClick={() => handelDecline(details._id)} className="btn btn-warning">decline</button>
+                                        <button onClick={() => handelDecline(details._id)} className="btn btn-warning">Delete Booking</button>
                                     </td>
                                 </tr>
                             )
