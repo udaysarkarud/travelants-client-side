@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -12,7 +13,7 @@ const Footer = () => {
                             </div>
 
                             <div className="quick-contacts">
-                                <p>Lorem ipsum dolor sit am co adipisicing elit, sed do eiusmod tempor</p>
+                                <p>We love to help you. Feel free to contact us Or visit our office anytime.</p>
                             </div>
                             <ul className="quick-contact-details">
                                 <li className="nav-link text-black">
@@ -50,17 +51,14 @@ const Footer = () => {
 
                         <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                             <div className="footer-title">
-                                <h3>Quick Links</h3>
+                                <h3>User Nav</h3>
                             </div>
                             <div className="footer-content">
                                 <div className="quick-links">
                                     <ul>
-                                        <li><a href="#">Wellness</a></li>
-                                        <li><a href="#">Vintage Stores</a></li>
-                                        <li><a href="#">Trekking</a></li>
-                                        <li><a href="#">Sightseeing</a></li>
-                                        <li><a href="#">Tours</a></li>
-                                        <li><a href="#">Sample Page</a></li>
+                                        <li><Link to="/home">Home</Link></li>
+                                        <li><Link to="/aboutus">About Us</Link></li>
+                                        <li><Link to="/myorders">Trek Your Book</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -68,17 +66,15 @@ const Footer = () => {
 
                         <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                             <div className="footer-title">
-                                <h3>Quick Links</h3>
+                                <h3>Admin Nav</h3>
                             </div>
                             <div className="footer-content">
                                 <div className="quick-links">
                                     <ul>
-                                        <li><a href="#">Wellness</a></li>
-                                        <li><a href="#">Vintage Stores</a></li>
-                                        <li><a href="#">Trekking</a></li>
-                                        <li><a href="#">Sightseeing</a></li>
-                                        <li><a href="#">Tours</a></li>
-                                        <li><a href="#">Sample Page</a></li>
+                                        <li><Link to="/manageorders">Manage Booking</Link></li>
+                                        <li><Link to="/addblog">Add Blog Post</Link></li>
+                                        <li><Link to="/addpackage">Add New Package</Link></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -91,15 +87,13 @@ const Footer = () => {
                                 </div>
                                 <div className="footer-content">
                                     <div className="subscribe">
-                                        <p>Lorem ipsum dolor si consectetur adipisicing elit, sed eiusmotempor incididunt ut
-                                            labore et</p>
+                                        <p>To get our latest update feel free to subscribe. We'll send all updates at your email.</p>
 
                                         <div className="subscribe-form">
-                                            <form action="#">
-                                                <input type="email" placeholder="Type Your Email" />
-                                                <button className="sub-btn" type="submit"><i
-                                                    className="fas fa-location-arrow"></i></button>
-                                            </form>
+                                            <input type="email" placeholder="Type Your Email" />
+                                            <button className="sub-btn" type="submit">
+                                                <i className="bi bi-arrow-right-circle-fill"></i>
+                                            </button>
                                         </div>
 
                                     </div>
@@ -119,7 +113,7 @@ const Footer = () => {
                         <div className="row">
                             <div className="col-xl-6 col-lg-6 col-md-12">
                                 <div className="copyright-text">
-                                    <p>Copyright © 2020 <a href="#"> TravelAnts</a>. All Rights Reserved.</p>
+                                    <p>Copyright © 2020 <a href="/"> TravelAnts</a>. All Rights Reserved.</p>
                                 </div>
                             </div>
                         </div>

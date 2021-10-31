@@ -7,7 +7,7 @@ const AddPackage = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
-        axios.post('http://host:5000/addtourpackage', data)
+        axios.post('https://limitless-lake-67234.herokuapp.com/addtourpackage', data)
             .then(res => {
                 swal("Great!", "New Tour Package Added", "success");
                 reset()

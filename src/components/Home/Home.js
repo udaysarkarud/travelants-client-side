@@ -13,7 +13,6 @@ const Home = () => {
             <SliderSection />
             <ServiceSection />
             <AboutSection />
-            <TopPackages />
             <Contact />
             <BlogSection />
         </main>

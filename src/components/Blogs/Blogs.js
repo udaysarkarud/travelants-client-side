@@ -7,7 +7,7 @@ const Blogs = () => {
     const [showAllBlogs, setShowAllBlogs] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/showblogs')
+        axios.get('https://limitless-lake-67234.herokuapp.com/showblogs')
             .then(res => setShowAllBlogs(res.data))
     }, [])
     return (

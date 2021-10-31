@@ -10,7 +10,7 @@ const MyOrders = () => {
     const { userProfile } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/mybookings?search=${userProfile.email}`)
+        axios.get(`https://limitless-lake-67234.herokuapp.com/mybookings?search=${userProfile.email}`)
             .then(res => {
                 setMyBookings(res.data)
                 setDbload(dbLoad + 1)
@@ -27,7 +27,7 @@ const MyOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:5000/deletebooking/${id}`)
+                    axios.delete(`https://limitless-lake-67234.herokuapp.com/deletebooking/${id}`)
                         .then(res => {
                             setDbload(dbLoad + 1)
                         })

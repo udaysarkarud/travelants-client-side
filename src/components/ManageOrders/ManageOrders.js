@@ -7,7 +7,7 @@ const ManageOrders = () => {
     const [dbLoad, setDbload] = useState(0)
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/mybookings`)
+        axios.get(`https://limitless-lake-67234.herokuapp.com/mybookings`)
             .then(res => {
                 setAllBookings(res.data)
             })
@@ -15,7 +15,7 @@ const ManageOrders = () => {
 
     const handelStatus = (id) => {
         console.log(id)
-        axios.put(`http://localhost:5000/changestatus/${id}`)
+        axios.put(`https://limitless-lake-67234.herokuapp.com/changestatus/${id}`)
             .then(res => {
                 setDbload(dbLoad + 1)
             })
@@ -31,7 +31,7 @@ const ManageOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete(`http://localhost:5000/deletebooking/${id}`)
+                    axios.delete(`https://limitless-lake-67234.herokuapp.com/deletebooking/${id}`)
                         .then(res => {
                             setDbload(dbLoad + 1)
                         })
