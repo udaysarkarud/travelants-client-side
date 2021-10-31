@@ -38,7 +38,7 @@ const BookingPanel = () => {
     return (
         <section className="container section-gap">
             <div className="row">
-                <div className="col-8">
+                <div className="col-12 col-lg-8">
                     <div className="blog-img">
                         <img src={singelPkg.img} alt="" className="img-fluid" />
                     </div>
@@ -51,7 +51,7 @@ const BookingPanel = () => {
                         <p>{singelPkg.description}</p>
                     </div>
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-lg-4">
                     <div className="blog-sidebar">
                         <div className="blog-search mb-5">
                             <h3></h3>

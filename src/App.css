@@ -59,7 +59,7 @@ h1,h3 {
 /* Common Styles end */
 
 /* Header Section Start */
-.header-area {
+/* .header-area {
     background: rgba(0, 0, 0, 0.5);
     z-index: 11; }
 
@@ -68,7 +68,7 @@ h1,h3 {
     top: 0;
     left: 0;
     right: 0;
-    width: 100%; }
+    width: 100%; } */
 /* Header Section End */
 
 /* About Us Section Start*/
@@ -358,11 +358,12 @@ h1,h3 {
     
 .blog-list ul li a {
       font-weight: 500; }  
-.card-img-top{
+/* .card-img-top{
     width: 100%;
     height: 15vw;
     object-fit: cover;
 }
+ */
 .contact-section{
 
     background:url("https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,h_600,q_auto,w_auto/v1/filestore/btdocigle4thx3iq0eg6uf99mqul_shutterstock_1176563608.jpg") rgba(0, 0, 0, 0.527);

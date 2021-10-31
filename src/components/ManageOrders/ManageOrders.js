@@ -53,7 +53,7 @@ const ManageOrders = () => {
                     </div>
                 </div>
             </div>
-            <div className="row gy-4">
+            <div className="row gy-4 table-responsive">
 
                 <table className="table table-hover">
                     <thead>

@@ -58,7 +58,7 @@ const Login = () => {
                                                 </div>
 
                                                 <div className="pt-1 mb-4">
-                                                    <button className="btn btn-dark btn-lg btn-block"
+                                                    <button className="btn btn-dark btn-lg btn-block mb-lg-0 mb-4"
                                                         type="button">Login</button> <button onClick={GoogleLogin}
                                                             className="btn btn-dark btn-lg btn-block" type="button">Google Login
                                                         / Singup</button>

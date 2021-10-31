@@ -17,7 +17,7 @@ const SingelBlogDetails = () => {
     return (
         <section className="container section-gap">
             <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                     <div className="blog-details">
                         <h3 className="mt-4">{blogDetails.title}</h3>
                         <div className="d-flex">
@@ -28,7 +28,7 @@ const SingelBlogDetails = () => {
                         <img src={blogDetails.img} alt="" className="img-fluid rounded" />
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                     <div className="blog-details">
                         <h3 className="mt-4"></h3>
                         <p>{blogDetails.description}</p>

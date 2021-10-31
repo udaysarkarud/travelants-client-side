@@ -6,8 +6,8 @@ import useAuth from '../../Hook/useAuth';
 const Header = () => {
     const { userProfile, handelSignOut } = useAuth();
     return (
-        <header className="header-area header-transparent">
-            <div className="container my-2 fs-6">
+        <header className="header-area header-dark bg-dark">
+            <div className="container py-2 fs-6">
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     <div className="container-fluid">
                         <a className="navbar-brand fw-bolder" href="/"><i className="bi bi-flower2"></i> TravelAnts</a>
@@ -34,7 +34,7 @@ const Header = () => {
                             {
                                 userProfile.email ?
                                     <>
-                                        <img src={userProfile?.photoURL} alt="" style={{ width: "4%" }} className="mx-2 rounded-circle" />
+                                        <img src={userProfile?.photoURL} alt="" style={{ width: "40px" }} className="mx-2 rounded-circle d-none d-lg-block" />
 
                                         <div className="dropdown">
                                             <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

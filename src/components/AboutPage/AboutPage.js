@@ -4,7 +4,7 @@ const AboutPage = () => {
     return (
         <section className="container section-gap">
             <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                     <div className="blog-img">
                         <img src="https://news.thrillophilia.com/content/images/size/w1000/2020/09/shutterstock_1086642716--2-.jpg" alt="" className="img-fluid rounded" />
                     </div>
@@ -13,7 +13,7 @@ const AboutPage = () => {
                         <p>The continually increase in the numbers of big cats in Madhya Pradesh is only doubling tourist interest upon the state.The forest Ministry stated that this particular move has been made solely as a slow initiative to start tourism activities in these areas because in the past, these reserves and parks were a major player in Madhya Pradesh Tourism.The key element here is that there visitors will only be allowed to enter following the right Covid restrictions</p>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                     <div className="blog-details">
                         <h3 className="mt-4">We are TravelAnts</h3>
                         <p>Back in 2011, when people started buying books online, when they started booking flights online, we started with a vision to sell activities and experiences (the last mile of travel) online. It seemed like an impossible vision to almost all VCs we met then; today Thrillophilia is the country’s most thrilling name when it comes to activities and experiences. With more than 40 M online traffic, we have catered to more than 2Million+ customers. Started with experiences in Bangalore, today Thrillophilia sells experiences of 15 Asian countries with Dubai, Thailand, Singapore and Bali leading the charts after India.</p>
