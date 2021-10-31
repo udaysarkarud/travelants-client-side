@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { useState } from 'react/cjs/react.development';
+
 
 const SingelBlogDetails = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
