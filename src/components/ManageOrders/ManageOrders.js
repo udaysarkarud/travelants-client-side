@@ -81,7 +81,7 @@ const ManageOrders = () => {
                                     <td>{details?.status}</td>
                                     <td>
                                         {
-                                            details?.status === 'pending' && <button onClick={() => handelStatus(details._id)} className="btn btn-success me-2">Approve</button>
+                                            details?.status === 'pending' && <button onClick={() => handelStatus(details._id)} className="btn btn-success me-2 mb-2">Approve</button>
                                         }
 
                                         <button onClick={() => handelDecline(details._id)} className="btn btn-warning">Delete</button>
